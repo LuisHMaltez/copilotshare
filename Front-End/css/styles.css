@@ -1,0 +1,382 @@
+@import 'https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css';
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f4f8;
+    color: #333;
+}
+
+header {
+    background-color: #1e3a8a;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+    position: sticky;
+    top: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    padding: 2rem;
+    max-width: 80%;
+    margin: 0 auto;
+    animation: fadeIn 1s ease-in-out;
+    display: grid;
+}
+
+section {
+    background-color: #fff;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+    align-items: center;
+}
+
+section .welcome {
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+input, textarea, button {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+button {
+    background-color: #2563eb;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #1d4ed8;
+}
+
+.change-option{
+    color: #1d4ed8;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@media (max-width: 3500px) {
+    .menu-button {
+        display: block;
+        background: #2563eb;
+        color: #fff;
+        padding: 10px;
+        border-radius: 8px;
+        cursor: pointer;
+        top: 15px;
+        right: 15px;
+        border: dotted;
+        margin-top: 2%;
+        background-color: #1e3a8a;
+    }
+
+    .menu-button:hover{
+        border: dotted;
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: #1e3a8a;
+        position: fixed;
+        top: 0;
+        right: -250px;
+        width: 250px;
+        height: 100%;
+        transition: right 0.3s ease;
+        justify-content: center;
+    }
+
+    .menu a {
+        color: #fff;
+        padding: 15px;
+        text-decoration: none;
+        display: block;
+        width: 100%;
+        text-align: left;
+    }
+
+    .menu.active {
+        right: 0;
+    }
+    .menu.active li{
+        margin: 2%;
+        width: 80%;
+        border-radius: 8px;
+        border: dotted;
+    }
+
+    .menu.active li:hover{
+        background-color: #1d4ed8;
+    }
+}
+
+.header-title {
+    color: #fff;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.buttons .button {
+    background-color: #2563eb;
+    color: #fff;
+    border-radius: 8px;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.buttons .button:hover {
+    background-color: #1d4ed8;
+}
+
+.user{
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+    flex-direction: column;
+    border: double;
+    width: 32.8%;
+}
+
+.user img {
+    max-width: 100px;
+    border-radius: 8px;
+}
+
+.user h3 {
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+.user p {
+    margin: 0.5rem 0;
+    color: #6b7280;
+    text-align: center;
+}
+
+.product {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+    flex-direction: column;
+    border: double;
+    width: 32.8%;
+}
+
+.product img {
+    max-width: 100px;
+    border-radius: 8px;
+}
+
+.product h3 {
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+.product p {
+    margin: 0.5rem 0;
+    color: #6b7280;
+    text-align: center;
+}
+
+.page-title{
+    background-color: #2563eb;
+    border-radius: 8px;
+    width: 25%;
+    text-align: center;
+    margin-bottom: 5%;
+    color: white;
+}
+
+#page-title-special{
+    width: 30%;
+}
+
+.product-inner-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: center;
+}
+
+.header-inner {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-img {
+    max-width: 50px;
+    height: auto;
+    border-radius: 5px;
+    margin: 5%;
+}
+
+.menu-button {
+    font-size: 1rem;
+    padding: 0.01rem 3rem;
+    margin-bottom: 0%;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+    flex-direction: column;
+    border: double;
+    height: 25%;
+    width: 32.8%;
+}
+
+.cart-item img {
+    max-width: 100px;
+    border-radius: 8px;
+}
+
+.cart-item h3 {
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+.cart-item p {
+    margin: 0.5rem 0;
+    color: #6b7280;
+}
+
+.total-text {
+    margin-top: 5%;
+}
+
+#add-product-btn{
+    margin-top: 5%;
+}
+
+#profile img{
+    max-width: 100px;
+    border-radius: 8px;
+}
+
+.delete-capsule{
+    display: flex;
+    flex-direction: row;
+}
+
+.delete-btn{
+    background-color:crimson;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.delete-btn:hover{
+    background-color: brown;
+}
+
+.delete-btn:hover{
+    .delete-btn-img{
+        background-color:brown;
+    }
+}
+
+.delete-btn-img{
+    background-color: crimson;
+    width: 50px;
+}
+
+.header-img-index {
+    max-width: 50px;
+    height: auto;
+    border-radius: 5px;
+
+}
+
+.supplier {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+    flex-direction: column;
+    border: double;
+    width: 32.8%;
+}
+
+.supplier-inner-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: center;
+}
+
+#add-supplier-btn{
+    margin-top: 5%;
+}
+
+
+.logout:hover{
+    .delete-btn-img{
+        background-color:brown;
+    }
+}
+
+.logout{
+    background-color: crimson;
+    width: 50px;
+}
