@@ -112,6 +112,29 @@ const loginUser = async (email, password, callback) => {
     }
 };
 
+// Obtención del perfil del usuario 
+const getProfile = async (req, res) => { 
+    const token = req.headers['authorization'].split(' ')[1]; 
+    const decoded = jwt.verify(token, 'secret'); 
+    const db = getDB(); 
+    try { 
+        const user = await db.collection('users').findOne({ _id: new ObjectId(decoded._id) }); 
+        if (!user) { 
+            return res.status(404).send({ error: 'Usuario no encontrado' }); 
+        } 
+        res.send({ 
+            nombre_usuario: user.nombre_usuario, 
+            nombre: user.nombre, 
+            email: user.email, 
+            telefono: user.telefono, 
+            fecha_nacimiento: user.fecha_nacimiento, 
+            rol_id: user.rol_id 
+        }); 
+    } catch (error) { 
+        res.status(500).send({ error: 'Error obteniendo el perfil' });
+    }
+};
+
 // Middleware para autenticar el token
 const authenticateToken = (req, callback) => {
     const authHeader = req.headers['authorization'];
@@ -143,6 +166,7 @@ const authorizeRole = (roles, user, callback) => {
 module.exports = {
     registerUser,
     loginUser,
+    getProfile,
     authenticateToken,
     authorizeRole,
     updateUser,

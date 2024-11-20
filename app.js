@@ -199,7 +199,7 @@ const server = http.createServer(async (req, res) => {
                         return;
                     }
                 }
-
+                app.get('/auth/profile', getProfile);
 // ==================== RUTAS DE PROVEEDORES ====================
 if (path === '/suppliers' && method === 'GET') {
     try {
